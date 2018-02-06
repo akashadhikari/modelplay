@@ -53,8 +53,8 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-crm/__pycache__
-client/__pycache__
+crm/__pycache__/
+client/__pycache__/
 
 # Flask stuff:
 instance/
