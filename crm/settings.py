@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'client',
+    'communication',
+    'lead',
 
     'django_extensions',
 ]

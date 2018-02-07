@@ -29,10 +29,11 @@ class SubStage(models.Model):
 class Communication(models.Model):
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    contact_person = models.CharField(max_length=255, blank=False)
     sales_stage = models.ForeignKey(SubStage, on_delete=models.CASCADE)
     fields = JSONField()
     created = models.DateField(auto_now=True)
 
     def __str__(self):
         return "{} is contacted by {} at {} on {}"\
-            .format(self.client, self.contact, self.sales_stage, self.created)
+            .format(self.client, self.contact_person,  self.sales_stage, self.created)

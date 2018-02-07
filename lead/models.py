@@ -13,6 +13,7 @@ class LeadPost(models.Model):
 
 
 class LeadStage(models.Model):
+
     stage = models.CharField(max_length=255, blank=False)
 
     def __str__(self):
@@ -22,7 +23,7 @@ class LeadStage(models.Model):
 class Lead(models.Model):
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    last_communication = models.ForeignKey(Communication, on_delete=models.CASCADE)
+    communication = models.ForeignKey(Communication, on_delete=models.CASCADE)
     lead_stage = models.ForeignKey(LeadStage, on_delete=models.CASCADE)
     lead_post = models.ForeignKey(LeadPost, on_delete=models.CASCADE)
 
