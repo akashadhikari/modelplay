@@ -44,8 +44,9 @@ INSTALLED_APPS = [
 ]
 
 GRAPH_MODELS = {
-  'all_applications': True,
-  'group_models': True,
+    'all_applications': True,
+    'pydot': True,
+    'group_models': True,
 }
 
 MIDDLEWARE = [
