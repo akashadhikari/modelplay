@@ -20,7 +20,7 @@ class Company(models.Model):
 
 class Client(models.Model):
 
-    group = models.BooleanField(default=False)
+    group_enable = models.BooleanField(default=False)
     group_of_companies = models.ManyToManyField(Company)
     contact_person = models.ManyToManyField(ContactPerson)
     created = models.DateField(auto_now=True)
@@ -28,4 +28,4 @@ class Client(models.Model):
     # Secondary Info can be filled likewise
 
     def __str__(self):
-        return "{}".format(self.name)
+        return "{}".format(self.created)

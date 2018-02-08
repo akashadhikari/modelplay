@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'client',
     'communication',
     'lead',
+    'common',
 
     'django_extensions',
+    'rest_framework',
 ]
 
 GRAPH_MODELS = {
@@ -88,8 +90,8 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'crm',
-        'USER': 'crmuser',
+        'NAME': 'crm1',
+        'USER': 'crmuser1',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',
