@@ -1,6 +1,6 @@
 digraph model_graph {
   // Dotfile by Django-Extensions graph_models
-  // Created: 2018-02-07 06:28
+  // Created: 2018-02-07 16:47
   // Cli Options: -a
 
   fontname = "Helvetica"
@@ -453,8 +453,22 @@ digraph model_graph {
     
       </TABLE>
       >]
+
+  }
+  subgraph cluster_communication {
+    label=<
+          <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+          <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER">
+          <FONT FACE="Helvetica Bold" COLOR="Black" POINT-SIZE="12">
+          communication
+          </FONT>
+          </TD></TR>
+          </TABLE>
+          >
+    color=olivedrab4
+    style="rounded"
   
-    client_models_SalesGroup [label=<
+    communication_models_SalesGroup [label=<
       <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
       <FONT FACE="Helvetica Bold" COLOR="white">
@@ -476,7 +490,7 @@ digraph model_graph {
       </TABLE>
       >]
   
-    client_models_SubStage [label=<
+    communication_models_SubStage [label=<
       <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
       <FONT FACE="Helvetica Bold" COLOR="white">
@@ -504,7 +518,29 @@ digraph model_graph {
       </TABLE>
       >]
   
-    client_models_Communication [label=<
+    communication_models_ContactPerson [label=<
+      <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+      <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+      <FONT FACE="Helvetica Bold" COLOR="white">
+      ContactPerson
+      </FONT></TD></TR>
+    
+      <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT FACE="Helvetica Bold">id</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT FACE="Helvetica Bold">AutoField</FONT>
+      </TD></TR>
+    
+      <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT FACE="Helvetica ">name</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT FACE="Helvetica ">CharField</FONT>
+      </TD></TR>
+    
+      </TABLE>
+      >]
+  
+    communication_models_Communication [label=<
       <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
       <FONT FACE="Helvetica Bold" COLOR="white">
@@ -524,21 +560,21 @@ digraph model_graph {
       </TD></TR>
     
       <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT FACE="Helvetica Bold">contact_person</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+      </TD></TR>
+    
+      <TR><TD ALIGN="LEFT" BORDER="0">
       <FONT FACE="Helvetica Bold">sales_stage</FONT>
       </TD><TD ALIGN="LEFT">
       <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
       </TD></TR>
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT FACE="Helvetica ">contact_person</FONT>
-      </TD><TD ALIGN="LEFT">
-      <FONT FACE="Helvetica ">CharField</FONT>
-      </TD></TR>
-    
-      <TR><TD ALIGN="LEFT" BORDER="0">
       <FONT COLOR="#7B7B7B" FACE="Helvetica ">created</FONT>
       </TD><TD ALIGN="LEFT">
-      <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateField</FONT>
+      <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
       </TD></TR>
     
       <TR><TD ALIGN="LEFT" BORDER="0">
@@ -547,10 +583,42 @@ digraph model_graph {
       <FONT FACE="Helvetica ">JSONField</FONT>
       </TD></TR>
     
+      <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT FACE="Helvetica ">medium</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT FACE="Helvetica ">CharField</FONT>
+      </TD></TR>
+    
+      <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT COLOR="#7B7B7B" FACE="Helvetica ">remarks</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT COLOR="#7B7B7B" FACE="Helvetica ">TextField</FONT>
+      </TD></TR>
+    
+      <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT COLOR="#7B7B7B" FACE="Helvetica ">set_reminder</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+      </TD></TR>
+    
       </TABLE>
       >]
+
+  }
+  subgraph cluster_lead {
+    label=<
+          <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+          <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER">
+          <FONT FACE="Helvetica Bold" COLOR="Black" POINT-SIZE="12">
+          lead
+          </FONT>
+          </TD></TR>
+          </TABLE>
+          >
+    color=olivedrab4
+    style="rounded"
   
-    client_models_LeadPost [label=<
+    lead_models_LeadPost [label=<
       <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
       <FONT FACE="Helvetica Bold" COLOR="white">
@@ -572,7 +640,7 @@ digraph model_graph {
       </TABLE>
       >]
   
-    client_models_LeadStage [label=<
+    lead_models_LeadStage [label=<
       <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
       <FONT FACE="Helvetica Bold" COLOR="white">
@@ -594,7 +662,7 @@ digraph model_graph {
       </TABLE>
       >]
   
-    client_models_Lead [label=<
+    lead_models_Lead [label=<
       <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
       <FONT FACE="Helvetica Bold" COLOR="white">
@@ -614,7 +682,13 @@ digraph model_graph {
       </TD></TR>
     
       <TR><TD ALIGN="LEFT" BORDER="0">
-      <FONT FACE="Helvetica Bold">last_communication</FONT>
+      <FONT FACE="Helvetica Bold">communication</FONT>
+      </TD><TD ALIGN="LEFT">
+      <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+      </TD></TR>
+    
+      <TR><TD ALIGN="LEFT" BORDER="0">
+      <FONT FACE="Helvetica Bold">lead_post</FONT>
       </TD><TD ALIGN="LEFT">
       <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
       </TD></TR>
@@ -679,23 +753,31 @@ digraph model_graph {
   [label="abstract\ninheritance"] [arrowhead=empty, arrowtail=none, dir=both];
 
 
-  client_models_SubStage -> client_models_SalesGroup
+
+  communication_models_SubStage -> communication_models_SalesGroup
   [label="sales_group (substage)"] [arrowhead=none, arrowtail=dot, dir=both];
 
-  client_models_Communication -> client_models_Client
+  communication_models_Communication -> client_models_Client
   [label="client (communication)"] [arrowhead=none, arrowtail=dot, dir=both];
 
-  client_models_Communication -> client_models_SubStage
+  communication_models_Communication -> communication_models_ContactPerson
+  [label="contact_person (communication)"] [arrowhead=none, arrowtail=dot, dir=both];
+
+  communication_models_Communication -> communication_models_SubStage
   [label="sales_stage (communication)"] [arrowhead=none, arrowtail=dot, dir=both];
 
-  client_models_Lead -> client_models_Client
+
+  lead_models_Lead -> client_models_Client
   [label="client (lead)"] [arrowhead=none, arrowtail=dot, dir=both];
 
-  client_models_Lead -> client_models_Communication
-  [label="last_communication (lead)"] [arrowhead=none, arrowtail=dot, dir=both];
+  lead_models_Lead -> communication_models_Communication
+  [label="communication (lead)"] [arrowhead=none, arrowtail=dot, dir=both];
 
-  client_models_Lead -> client_models_LeadStage
+  lead_models_Lead -> lead_models_LeadStage
   [label="lead_stage (lead)"] [arrowhead=none, arrowtail=dot, dir=both];
+
+  lead_models_Lead -> lead_models_LeadPost
+  [label="lead_post (lead)"] [arrowhead=none, arrowtail=dot, dir=both];
 
 
 }
