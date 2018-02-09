@@ -13,14 +13,20 @@ class SalesGroup(models.Model):
     def __str__(self):
         return "{}".format(self.name)
 
+'''
 
-# Each SubStage belongs to a certain SalesGroup
+Each SubStage belongs to a certain SalesGroup
+Note : You can make a separate model for Sub-Groups alone.
+Then, in the next model you can assign 2 foreign keys:
+One for SalesGroup, other for SubGroup
+
+'''
 
 
 class SubStage(models.Model):
 
-    sales_group = models.ForeignKey(SalesGroup, on_delete=models.CASCADE)
     name = models.CharField(max_length=255, blank=False)
+    sales_group = models.ForeignKey(SalesGroup, on_delete=models.CASCADE)
     # enable date
     # enable remarks
     # enable any data type
@@ -32,10 +38,8 @@ class SubStage(models.Model):
 
 
 MEDIUMS = (
-    ('Outbound Call', 'Outbound Call'),
-    ('Inbound Call', 'Inbound Call'),
-    ('Inbound Email', 'Inbound Email'),
-    ('Outbound Email', 'Outbound Email'),
+    ('Call', 'Call'),
+    ('Email', 'Email'),
     ('SMS', 'SMS'),
     ('Meeting', 'Meeting')
 )
@@ -50,6 +54,7 @@ MEDIUM_STATUS = (
     ('Unsuccessful', 'Unsuccessful'),
 )
 
+# CM1 Communication form
 
 class Communication(models.Model):
 

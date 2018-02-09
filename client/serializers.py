@@ -7,8 +7,6 @@ from .models import (
 
 class ClientSerializer(serializers.ModelSerializer):
 
-    #client_listofproduct = ListOfProductSerializer
-
     class Meta:
         model = Client
         fields = '__all__'
